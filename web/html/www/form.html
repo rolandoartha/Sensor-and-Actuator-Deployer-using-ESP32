@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <title>PLN Cabinet Control</title>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name=description content>
+    <meta name=author content>
+    <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css rel=stylesheet
+        integrity=sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1 crossorigin=anonymous>
+    <link href="/settings.css" rel="stylesheet">
+    <script>function togglePwdVisible(b) { var a = document.getElementById(b); if (a.type === "password") { a.type = "text" } else { a.type = "password" } }</script>
+</head>
+
+<body>
+    <div
+        class="navbar navbar-dark bg-primary d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+        <img src=/favicon.ico width=40 height=53 class="d-inline-block align-top" alt> <a
+            class="navbar-brand text-secondary" href= />PLN Cabinet Control</a> <a class="btn btn-outline-primary"
+            href= />Back</a>
+    </div>
+    <div class="container settings-form">
+        <form action=/save method=get>
+            <h3>Settings</h3> <label for=dnm>Device Name</label> <input class=form-control type=text id=dnm name=dnm
+                maxlength=20 placeholder="Enter Name For This Device"> <label for=apssid>AP SSID</label>
+            <input class=form-control type=text class=form-control id=apssid name=apssid
+                placeholder="Enter Access Point Name" maxlength=32> <label for=appwd>AP Password</label> <input
+                class=form-control type=password id=appwd name=appwd class=form-control
+                placeholder="Access Point Password" maxlength=20> <input type=checkbox
+                onclick="togglePwdVisible('appwd')"> Show Password <br><br> <label for=tetssid>Tethering SSID</label>
+            <input class=form-control type=text class=form-control id=tetssid name=tetssid
+                placeholder="Enter Tethering AP Name" maxlength=32> <label for=tetpwd>Tethering Password</label>
+            <input type=password id=tetpwd name=tetpwd class=form-control placeholder="Tethering AP Password"
+                maxlength=20> <input type=checkbox onclick="togglePwdVisible('tetpwd')"> Show Password <br><br>
+            <label for=puser>Portal Username</label> <input type=text class=form-control id=puser name=puser
+                maxlength=20 placeholder="Enter Login Portal Username"> <label for=ppwd>Portal Password</label>
+            <input type=password id=ppwd name=ppwd class=form-control maxlength=20 placeholder="Login Portal Password">
+            <input type=checkbox onclick="togglePwdVisible('ppwd')"> Show
+            Password <br><br>
+            <div class="row form-group">
+                <div class="col-5 col-sm-4 text-primary text-center"><b>Channel Name</b></div>
+                <div class="col-7 col-sm-7 text-primary text-center"><b>Description</b></div>
+                <div class=w-100></div>
+                <div class=col-5>
+                    <div class="input-group mb-3">
+                        <div class=input-group-prepend> <span class=input-group-text id=basic-addon1>1</span>
+                        </div> <input name=c1n id=c1n maxlength=20 type=text class=form-control
+                            aria-describedby=basic-addon1>
+                    </div>
+                </div>
+                <div class=col-7><input type=text class=form-control id=c1d name=c1d maxlength=50></div>
+                <div class=w-100></div>
+                <div class=col-5>
+                    <div class="input-group mb-3">
+                        <div class=input-group-prepend> <span class=input-group-text id=basic-addon1>2</span>
+                        </div> <input id=c2n name=c2n maxlength=20 type=text class=form-control
+                            aria-describedby=basic-addon1>
+                    </div>
+                </div>
+                <div class=col-7><input type=text class=form-control id=c2d name=c2d></div>
+                <div class=w-100></div>
+                <div class=col-5>
+                    <div class="input-group mb-3">
+                        <div class=input-group-prepend> <span class=input-group-text id=basic-addon1>3</span>
+                        </div> <input id=c3n name=c3n maxlength=20 type=text class=form-control
+                            aria-describedby=basic-addon1>
+                    </div>
+                </div>
+                <div class=col-7><input type=text class=form-control id=c3d name=c3d></div>
+                <div class=w-100></div>
+                <div class=col-5>
+                    <div class="input-group mb-3">
+                        <div class=input-group-prepend> <span class=input-group-text id=basic-addon1>4</span>
+                        </div> <input id=c4n name=c4n maxlength=20 type=text class=form-control
+                            aria-describedby=basic-addon1>
+                    </div>
+                </div>
+                <div class=col-7><input type=text class=form-control id=c4d name=c4d></div>
+                <div class=w-100></div>
+                <div class=col-5>
+                    <div class="input-group mb-3">
+                        <div class=input-group-prepend> <span class=input-group-text id=basic-addon1>5</span>
+                        </div> <input id=c5n name=c5n maxlength=20 type=text class=form-control
+                            aria-describedby=basic-addon1>
+                    </div>
+                </div>
+                <div class=col-7><input type=text class=form-control id=c5d name=c5d></div>
+                <div class=w-100></div>
+                <div class=col-5>
+                    <div class="input-group mb-3">
+                        <div class=input-group-prepend> <span class=input-group-text id=basic-addon1>6</span>
+                        </div> <input id=c6n name=c6n maxlength=20 type=text class=form-control
+                            aria-describedby=basic-addon1>
+                    </div>
+                </div>
+                <div class=col-7><input type=text class=form-control id=c6d name=c6d></div>
+                <div class=w-100></div>
+                <div class=col-5>
+                    <div class="input-group mb-3">
+                        <div class=input-group-prepend> <span class=input-group-text id=basic-addon1>7</span>
+                        </div> <input id=c7n name=c7n maxlength=20 type=text class=form-control
+                            aria-describedby=basic-addon1>
+                    </div>
+                </div>
+                <div class=col-7><input type=text class=form-control id=c7d name=c7d></div>
+                <div class=w-100></div>
+                <div class=col-5>
+                    <div class="input-group mb-3">
+                        <div class=input-group-prepend> <span class=input-group-text id=basic-addon1>8</span>
+                        </div> <input id=c8n name=c8n maxlength=20 type=text class=form-control
+                            aria-describedby=basic-addon1>
+                    </div>
+                </div>
+                <div class=col-7><input type=text class=form-control id=c8d name=c8d></div>
+                <div class=w-100></div>
+            </div> <br><br><br>
+            <div class="container text-center"> <button type=submit class="btn btn-primary">Save</button> <a
+                    class="btn btn-danger" href= />Cancel</a> </div>
+        </form>
+    </div>
+    <div class="text-muted mt-5 mb-5 text-center small"><a class=text-white target=_blank
+            href=http://www.pln.co.id>&#169; 2021 PT PLN Persero</a></div>
+    <script>function toggleCheckbox(a) { var b = new XMLHttpRequest(); if (a.checked) { b.open("GET", "/updt?ch=" + a.id + "&st=1", true) } else { b.open("GET", "/updt?ch=" + a.id + "&st=0", true) } b.send() };</script>
+</body>
+
+</html>

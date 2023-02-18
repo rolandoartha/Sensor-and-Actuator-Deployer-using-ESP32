@@ -1,0 +1,218 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>PLN Cabinet Control</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <style>
+        .card-channel.popular {
+  z-index: 1;
+  border: 3px solid #007bff;
+}
+.card-channel:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+.card-channel .list-unstyled li {
+  padding: .5rem 0;
+  color: #6c757d;
+}
+body {
+  background: #00B4DB;
+  background: -webkit-linear-gradient(to right, #2196F3, #3F51B5);
+  background: linear-gradient(to right, #2196F3, #3F51B5);
+  color: #514B64;
+  min-height: 100vh;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ca2222;
+  -webkit-transition: .4s;
+  transition: .4s;
+   border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #28A745;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(55px);
+}
+
+/*------ ADDED CSS ---------*/
+.slider:after
+{
+ content:'OFF';
+ color: white;
+ display: block;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ top: 50%;
+ left: 50%;
+ font-size: 10px;
+ font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider:after
+{  
+  content:'ON';
+}
+
+/*--------- END --------*/
+
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-dark bg-primary d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <img src="/favicon.ico" width="40" height="53" class="d-inline-block align-top" alt="">
+      <a class="navbar-brand text-secondary" href="/">PLN Cabinet Control</a> 
+      <a class="btn btn-outline-primary" href="/settings">Settings</a>
+      
+    </div>
+    <div class="container mb-5 mt-5">
+        <div class="channel card-deck flex-column flex-md-row mb-3">
+            <div class="row">
+          <div class="col">
+                  <div class="card card-channel text-center px-3 mb-4">
+                      <span
+                          class="h3 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Channel 1</span>
+                      <div class="card-body pt-0">
+                          <ul class="list-unstyled mb-4">
+                              <li>This channel controls multiple cabinets in battery room</li>
+                          </ul>
+                          <label class="switch"><input type="checkbox" onchange="toggleCheckbox(this)" id="1"  ">
+                          <span class="slider round"></span></label>
+                        </div>
+                        </div></div>
+                          
+          <div class="col">
+                  <div class="card card-channel text-center px-3 mb-4">
+                      <span
+                          class="h3 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Channel 2</span>
+                      <div class="card-body pt-0">
+                          <ul class="list-unstyled mb-4">
+                              <li>This channel controls multiple cabinets in battery room</li>
+                          </ul>
+                          <label class="switch"><input type="checkbox" onchange="toggleCheckbox(this)" id="2"  ">
+                          <span class="slider round"></span></label></div></div></div>
+                          
+          <div class="col">
+                  <div class="card card-channel text-center px-3 mb-4">
+                      <span
+                          class="h3 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Channel 3</span>
+                      <div class="card-body pt-0">
+                          <ul class="list-unstyled mb-4">
+                              <li>This channel controls multiple cabinets in battery room</li>
+                          </ul>
+                          <label class="switch"><input type="checkbox" onchange="toggleCheckbox(this)" id="3"  ">
+                          <span class="slider round"></span></label></div></div></div>
+                          
+          <div class="col">
+                  <div class="card card-channel text-center px-3 mb-4">
+                      <span
+                          class="h3 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Channel 4</span>
+                      <div class="card-body pt-0">
+                          <ul class="list-unstyled mb-4">
+                              <li>This channel controls multiple cabinets in battery room</li>
+                          </ul>
+                          <label class="switch"><input type="checkbox" onchange="toggleCheckbox(this)" id="4"  ">
+                          <span class="slider round"></span></label></div></div></div>
+                          </div><div class="row">
+          <div class="col">
+                  <div class="card card-channel text-center px-3 mb-4">
+                      <span
+                          class="h3 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Channel 5</span>
+                      <div class="card-body pt-0">
+                          <ul class="list-unstyled mb-4">
+                              <li>This channel controls multiple cabinets in battery room</li>
+                          </ul>
+                          <label class="switch"><input type="checkbox" onchange="toggleCheckbox(this)" id="5"  ">
+                          <span class="slider round"></span></label></div></div></div>
+                          
+          <div class="col">
+                  <div class="card card-channel text-center px-3 mb-4">
+                      <span
+                          class="h3 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Channel 6</span>
+                      <div class="card-body pt-0">
+                          <ul class="list-unstyled mb-4">
+                              <li>This channel controls multiple cabinets in battery room</li>
+                          </ul>
+                          <label class="switch"><input type="checkbox" onchange="toggleCheckbox(this)" id="6"  ">
+                          <span class="slider round"></span></label></div></div></div>
+                          
+          <div class="col">
+                  <div class="card card-channel text-center px-3 mb-4">
+                      <span
+                          class="h3 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Channel 7</span>
+                      <div class="card-body pt-0">
+                          <ul class="list-unstyled mb-4">
+                              <li>This channel controls multiple cabinets in battery room</li>
+                          </ul>
+                          <label class="switch"><input type="checkbox" onchange="toggleCheckbox(this)" id="7"  ">
+                          <span class="slider round"></span></label></div></div></div>
+                          
+          <div class="col">
+                  <div class="card card-channel text-center px-3 mb-4">
+                      <span
+                          class="h3 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Channel 8</span>
+                      <div class="card-body pt-0">
+                          <ul class="list-unstyled mb-4">
+                              <li>This channel controls multiple cabinets in battery room</li>
+                          </ul>
+                          <label class="switch"><input type="checkbox" onchange="toggleCheckbox(this)" id="8"  ">
+                          <span class="slider round"></span></label></div></div></div>
+                          </div>
+        </div>
+    </div>
+    <div class="text-muted mt-5 mb-5 text-center small"><a class="text-white" target="_blank" href="http://www.pln.co.id">&#169; 2021 PT PLN Persero</a></div>
+    <script>function toggleCheckbox(element) {
+      var xhr = new XMLHttpRequest();
+      if(element.checked){ xhr.open("GET", "/updt?ch="+element.id+"&st=1", true); }
+      else { xhr.open("GET", "/updt?ch="+element.id+"&st=0", true); }
+      xhr.send();
+    }</script>
+</body>
+</html>

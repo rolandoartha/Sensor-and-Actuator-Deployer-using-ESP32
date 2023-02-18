@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <title>%TITLE%</title>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name=description content>
+    <meta name=author content>
+    <link href="assets/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/settings.css" rel="stylesheet">
+    <script type="text/javascript" src="assets/bootstrap.min.js"></script>
+    <script>function togglePwdVisible(b) { var a = document.getElementById(b); if (a.type === "password") { a.type = "text" } else { a.type = "password" } }</script>
+    <script>
+        function nospaces(t) {
+            if (t.value.match(/\s/g)) {
+                t.value = t.value.replace(/\s/g, '');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <noscript>
+		<strong>%PRODNAME% doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+	</noscript>
+    <div
+        class="navbar navbar-dark bg-primary d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+        <img src=assets/logo.png width=40 height=53 class="d-inline-block align-top" alt> <a
+            class="navbar-brand text-dark" href="/"><b>%DNM%</b></a>
+            <div class="dropdown nav-control">
+<!--       <button class="btn btn-primary dropdown-toggle" type="button" 
+        id="ddMenuBtn" data-bs-toggle="dropdown" aria-expanded="false">Menu
+        </button>
+        <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="ddMenuBtn">
+            <li><a class="dropdown-item" href="/">Back</a></li>
+        </ul>-->
+        </div>
+    </div>
+
+
+    <div class="container p-3 settings-form">
+        <form action=/save method="POST">
+            <div class="accordion" id="accrd">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#coll1" aria-expanded="true" aria-controls="coll1">
+                            <b>General</b>
+                        </button>
+                    </h2>
+                    <div id="coll1" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accrd">
+                        <div class="accordion-body">
+<!--                           <label for=dnm>Device Name/Tethering SSID</label>
+                            <input class="form-control" type=text id=dnm name=dnm minlength="1" maxlength=%MAXSTR%
+                                placeholder="Enter Name For This Device" value="%DNM%" onkeyup="nospaces(this)">
+                            <label for=tetpwd>Tethering
+                                Password</label>
+                            <input type=password id=tetpwd name=tetpwd class=form-control
+                                placeholder="Tethering AP Password (8-%MAXSTR% chars)" maxlength=%MAXSTR% minlength="8" value="%TETPWD%">
+                            <label class="form-check-label">
+                                <input type=checkbox onclick="togglePwdVisible('tetpwd')"><small> Show Password</small>
+                            </label>
+                            <br><br>-->
+                            <label for=apssid> SSID</label>
+                            <input class=form-control type=text class=form-control id=apssid name=apssid
+                                placeholder="Enter Access Point Name" minlength="1" maxlength=%MAXSSID% value="%APSSID%">
+                            <label for=appwd> Password</label>
+                            <input class=form-control type=password id=appwd name=appwd class=form-control
+                                placeholder="Access Point Password (8-%MAXSTR% chars)" maxlength=%MAXSTR% minlength="8" value="%APPWD%">
+                            <label class="form-check-label">
+                                <input type=checkbox onclick="togglePwdVisible('appwd')"><small> Show Password</small>
+                            </label>
+                            <br><br>
+                            
+ <!--                           <label for=puser>Portal Username</label> <input type=text class=form-control id=puser
+                                name=puser maxlength=%MAXSTR% placeholder="Enter Portal Username" maxlength=%MAXSTR% minlength="1" value="%PUSER%">
+                            <label for=ppwd>Portal Password</label>
+                            <input type=password id=ppwd name=ppwd class=form-control maxlength=%MAXSTR%
+                                placeholder="Enter Portal Password" value="%PPWD%" maxlength=%MAXSTR% minlength="1">
+                            <label class="form-check-label">
+                                <input type=checkbox onclick="togglePwdVisible('ppwd')"><small> Show Password</small>
+                            </label>
+                            <br><br>-->
+                            <label for=sensor>Select Sensor/Actuators</label><br>
+                            <select class="form-control" id=sensor name=sensor>
+                                <option value="1" %SELDHT%>DHT11</option>
+                                <option value="2" %SELSOIL%>Soil Moisture</option>
+                                <option value="3" %SELPIR%>PIR</option>
+                                <option value="4" %SELLDR%>LDR</option>
+                                <option value="6" %SELDIST%>Distance</option>
+                                <option value="7" %SELSOUND%>Sound</option>
+                                <option value="8" %SELFIRE%>Fire</option>
+                                <option value="5" %SELRELAY%>Relay</option>
+                                
+                            </select>
+                            
+                        </div>
+                    </div>
+                </div>
+               <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#coll2" aria-expanded="true"
+                            aria-controls="coll2">
+                            <b>MQTT</b>
+                        </button>
+                    </h2>
+                    <div id="coll2" class="accordion-collapse collapse show"
+                        aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body">
+<!--                            <label for=msrvr>Server</label>
+                            <input class="form-control" type=text id=msrvr name=msrvr minlength="1" maxlength=%MAXSTR%
+                                placeholder="MQTT Server" value="%MQTTSRVR%" onkeyup="nospaces(this)">
+                            <label for=mport class="col">Port</label>
+                            <input class="form-control" type="number" id="mport" name="mport"
+                                        minlength="%MQTTPORTMIN%" maxlength="%MQTTPORTMAX%" value="%MQTTPORT%">
+                            <label for=muser>Username</label>
+                            <input class="form-control" type=text id=muser name=muser minlength="1" maxlength=%MAXSTR%
+                                placeholder="MQTT Username" value="%MQTTUSER%" onkeyup="nospaces(this)">
+                            <label for=mpwd>Password</label>
+                            <input type=password id=mpwd name=mpwd class=form-control maxlength=%MAXSTR%
+                                placeholder="Enter MQTT Password" value="%MPWD%" maxlength=%MAXSTR% minlength="1">
+                            <label class="form-check-label">
+                                <input type=checkbox onclick="togglePwdVisible('mpwd')"><small> Show Password</small>
+                            </label><br>-->
+                            <label for=mpub>Publish Topic</label>
+                            <input class="form-control" type=text id=mpub name=mpub minlength="1" maxlength=%MAXSTR%
+                                placeholder="Enter MQTT Publish Topic" value="%MQTTPUB%" onkeyup="nospaces(this)">
+                            <label for=msub>Subscribe Topic</label>
+                            <input class="form-control" type=text id=msub name=msub minlength="1" maxlength=%MAXSTR%
+                                placeholder="Enter MQTT Subscribe Topic" value="%MQTTSUB%" onkeyup="nospaces(this)">
+                            <label for=mpubsec> Publish Interval (second)</label>
+                            <input class=form-control class=form-control id=mpubsec name=mpubsec
+                                type=number value="%MQTTPUBSEC%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center mt-4"> <button type=submit class="btn btn-primary">Save</button> <a
+                class="btn btn-danger" href="/">Cancel</a> </div>
+        </form>
+    </div>
+    <div id="pgfooter" class="text-muted mt-5 mb-5 text-center small"><a class="text-white" target="_blank"
+        href="#" target="_blank">&#169; TA-2022-D3TK-08</a></div>
+    <script>function toggleCheckbox(a) { var b = new XMLHttpRequest(); if (a.checked) { b.open("GET", "/updt?ch=" + a.id + "&st=1", true) } else { b.open("GET", "/updt?ch=" + a.id + "&st=0", true) } b.send() };</script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{
+	"NAME": "ESP32_1",
+	"APNAME": "realme", //isi ssid wifi yang akan digunakan
+	"APPWD": "biasaaja", //password wifi yang digunakan
+	"TETPWD": "tugasakhir",
+	"PORTALUSER": "admin",
+	"PORTALPWD": "admin",
+	"MQTT_SERVER": "192.168.58.216",
+	"MQTT_PORT": 1883,
+	"MQTT_USERNAME": "",
+	"MQTT_PWD": "",
+	"MQTT_PUB_TOPIC": "/feeds/Sensor",
+	"MQTT_SUB_TOPIC": "/command",
+	"MQTT_PUB_SEC" : 3,
+	"SENSOR": 1
+}
